@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TimerAppProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqS-7Y-7AW">
+                                <rect key="frame" x="89.666666666666686" y="78" width="249" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-Pi-CSQ">
+                                <rect key="frame" x="0.0" y="168" width="153" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="시작">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="31"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startstopTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6J6-yp-uif"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E2-Ji-hx6">
+                                <rect key="frame" x="275" y="168" width="153" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="리셋">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="31"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7o-NN-Nrt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9E2-Ji-hx6" firstAttribute="width" secondItem="Rsc-Pi-CSQ" secondAttribute="width" id="6s7-a5-AcW"/>
+                            <constraint firstItem="9E2-Ji-hx6" firstAttribute="top" secondItem="tqS-7Y-7AW" secondAttribute="bottom" constant="30" id="bTk-DO-bxT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9E2-Ji-hx6" secondAttribute="trailing" id="bai-Iu-0n2"/>
+                            <constraint firstItem="9E2-Ji-hx6" firstAttribute="leading" secondItem="Rsc-Pi-CSQ" secondAttribute="trailing" constant="122" id="iEx-9Y-2Q2"/>
+                            <constraint firstItem="tqS-7Y-7AW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oIp-eJ-MeK"/>
+                            <constraint firstItem="tqS-7Y-7AW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="u0R-s2-vnc"/>
+                            <constraint firstItem="Rsc-Pi-CSQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uNw-U1-GhK"/>
+                            <constraint firstItem="Rsc-Pi-CSQ" firstAttribute="centerY" secondItem="9E2-Ji-hx6" secondAttribute="centerY" id="wdk-Ms-CGA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TimerLabel" destination="tqS-7Y-7AW" id="HlO-Qv-0cg"/>
+                        <outlet property="resetButton" destination="9E2-Ji-hx6" id="9hw-Ts-iid"/>
+                        <outlet property="startStopButton" destination="Rsc-Pi-CSQ" id="cF0-sX-Eqv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
